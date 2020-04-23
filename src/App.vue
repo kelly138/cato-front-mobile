@@ -1,11 +1,11 @@
 <template>
-  <div class="app" id="app">
+  <div id="app" class="app">
     <keep-alive>
-      <router-view v-if="$route.meta.keepAlive"></router-view>
+      <router-view v-if="$route.meta.keepAlive" />
     </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive"></router-view>
+    <router-view v-if="!$route.meta.keepAlive" />
     <!-- tabbar -->
-    <TabBar></TabBar>
+    <TabBar v-if="$route.meta.title!=='dashboard'" />
   </div>
 </template>
 <script>
