@@ -1,7 +1,11 @@
-# mint-ui
-本示例参考mint-ui官网
-下载后 (源码有的地方没有优化，欢迎提供建议，邮箱：xxwangkaimin@sina.com)
-npm install
-npm run dev
-项目演示地址：www.wkm123.com/mint
-推荐手机浏览，或者浏览器开启手机模拟
+# cato-front-mobile
+
+## 广拓官方网站移动端
+
+> 基于Vue + Mint UI 的移动端项目
+
+**npm install**
+
+**npm run dev**
+
+**npm run build**
