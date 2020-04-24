@@ -1,15 +1,17 @@
 <template>
   <div class="app-container" :style="{backgroundImage:'url('+url+')'}" style="background-size: 100% 100%">
     <div class="warpper">
-      <div class="list">
-        <div class="logo" />
-        <div class="demo-home__title">欢迎页面</div>
+      <div class="main">
+        <div class="list">
+          <div class="logo" />
+          <div class="demo-home__title">欢迎页面</div>
 
-        <div class="item">项目作者: kelly</div>
+          <div class="item">项目作者: kelly</div>
 
-        <van-row type="flex" justify="center">
-          <van-col><van-button type="primary" @click="toIndex">点击进入主页</van-button></van-col>
-        </van-row>
+          <van-row type="flex" justify="center">
+            <van-col><van-button type="primary" @click="toIndex">点击进入主页</van-button></van-col>
+          </van-row>
+        </div>
       </div>
     </div>
   </div>
@@ -46,12 +48,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .app-container {
-  background: #fff;
   height: 100vh;
   box-sizing: border-box;
   .warpper {
-    padding: 50px 12px 12px 12px;
-    .list {
+    height: 100vh;
+    // padding: 50px 12px 12px 12px;
+    background:linear-gradient(rgba(91,73,224,0.1),rgba(75,182,209,0.4));
+    .main{
+      opacity: 1;
+      .list {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -88,6 +93,9 @@ export default {
         }
       }
     }
+
+    }
+
   }
 }
 </style>
