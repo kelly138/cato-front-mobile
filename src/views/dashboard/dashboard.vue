@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div class="app-container" :style="{backgroundImage:'url('+url+')'}" style="background-size: 100% 100%">
     <div class="warpper">
       <div class="list">
         <div class="logo" />
@@ -8,7 +8,7 @@
         <div class="item">项目作者: kelly</div>
 
         <van-row type="flex" justify="center">
-          <wan-col><van-button type="primary" @click="toIndex">点击进入主页</van-button></wan-col>
+          <van-col><van-button type="primary" @click="toIndex">点击进入主页</van-button></van-col>
         </van-row>
       </div>
     </div>
@@ -17,12 +17,13 @@
 
 <script>
 // 请求接口
-import { getUserInfo } from '@/api/user.js'
+import login_bg from '@/assets/images/background.jpg'
 import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      wechat: `${this.$cdn}/wx/640.gif`
+      wechat: `${this.$cdn}/wx/640.gif`,
+      url: login_bg
     }
   },
 
@@ -31,7 +32,6 @@ export default {
   },
 
   mounted() {
-    this.initData()
   },
 
   methods: {
@@ -40,21 +40,6 @@ export default {
       this.$router.push({
         path: '/home'
       })
-    },
-    // 请求数据案例
-    initData() {
-      // 请求接口数据，仅作为展示，需要配置src->config下环境文件
-      const params = { user: 'sunnie' }
-      getUserInfo(params)
-        .then(() => {})
-        .catch(() => {})
-    },
-    // Action 通过 store.dispatch 方法触发
-    doDispatch() {
-      this.$store.dispatch('setUserName', '真乖，赶紧关注公众号，组织都在等你~')
-    },
-    goGithub(index) {
-      window.location.href = 'https://github.com/sunniejs/vue-h5-template'
     }
   }
 }
