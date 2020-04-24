@@ -4,6 +4,12 @@
       <van-tabbar-item to="/home" icon="home-o">
         首页
       </van-tabbar-item>
+      <van-tabbar-item to="/news" icon="comment-o">
+        新闻动态
+      </van-tabbar-item>
+      <van-tabbar-item to="/works" icon="qr">
+        作品展示
+      </van-tabbar-item>
       <van-tabbar-item to="/about" icon="user-o">
         关于我
       </van-tabbar-item>
@@ -25,7 +31,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
+div {
+  background-color: #ffffff;
+}
+/* h3 {
   margin: 40px 0 0;
 }
 ul {
@@ -38,5 +47,5 @@ li {
 }
 a {
   color: #42b983;
-}
+} */
 </style>
