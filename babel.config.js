@@ -7,8 +7,12 @@ const plugins = [
       libraryName: 'vant',
       libraryDirectory: 'es',
       style: true
-    },
-    'vant'
+    }
+    // 'vant',
+    // {
+    //   'libraryName': 'vue-canvas-effect',
+    //   'libraryDirectory': 'src/components'
+    // }
   ]
 ]
 // 去除 console.log
@@ -17,6 +21,6 @@ if (IS_PROD) {
 }
 
 module.exports = {
-  presets: [['@vue/cli-plugin-babel/preset', {useBuiltIns: 'usage', corejs: 3}]],
+  presets: [['@vue/cli-plugin-babel/preset', { useBuiltIns: 'usage', corejs: 3 }]],
   plugins
 }
