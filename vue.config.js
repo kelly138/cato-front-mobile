@@ -2,7 +2,7 @@
 const path = require('path')
 const defaultSettings = require('./src/config/index.js')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-
+const webpack = require('webpack')
 const resolve = dir => path.join(__dirname, dir)
 // page title
 const name = defaultSettings.title || 'vue mobile template'
@@ -37,6 +37,7 @@ const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 // }
 
 module.exports = {
+
   publicPath: './', // 署应用包时的基本 URL。 vue-router hash 模式使用
   //  publicPath: '/app/', //署应用包时的基本 URL。  vue-router history模式使用
   outputDir: 'dist', //  生产环境构建文件的目录
@@ -92,6 +93,13 @@ module.exports = {
   chainWebpack: config => {
     config.plugins.delete('preload') // TODO: need test
     config.plugins.delete('prefetch') // TODO: need test
+
+    config.plugin('provide').use(webpack.ProvidePlugin, [{ // 引入jquery
+      $: 'jquery',
+      jquery: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }])
 
     // 别名 alias
     config.resolve.alias
